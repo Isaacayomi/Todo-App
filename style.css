@@ -1,0 +1,309 @@
+:root {
+  --background-color: white;
+  --input-color: white;
+  --box-shadow: #c2c3d680;
+  --task-input: #9495a5;
+  --container-bg: white;
+  --border-color: #e3e4f1;
+  --task-container-paragraphs-color: #494c6b;
+  --state-switch: white;
+  --background-image: url("./images/lightmode-bg.jpg");
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --background-color: #171823;
+  --input-color: #25273d;
+  --box-shadow: #00000080;
+  --task-input: #767992;
+  --container-bg: #25273d;
+  --border-color: #393a4b;
+  --task-container-paragraphs-color: #c8cbe7;
+  --state-switch: #25273d;
+  --background-image: url("./images/darkmode-bg.jpg");
+  /* --task-color: #C8CBE7; */
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-size: 90rem 18.75rem;
+  font-family: "Josefin Sans", sans-serif;
+  transition: 0.2s linear;
+}
+
+.heading__elements {
+  max-width: 33.8125rem;
+  width: 100%;
+  margin-inline: auto;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 21.75rem;
+  padding-top: 4.38rem;
+  padding-bottom: 2.5rem;
+}
+
+.heading__elements h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.9375rem;
+}
+
+.mode__btn {
+  max-width: 1.56956rem;
+  width: 100%;
+  height: 1.625rem;
+}
+
+img.mode__btn:hover,
+.check__task:hover,
+.task:hover,
+.clear__btn:hover,
+.switch__state p:hover,
+.clear__completed__tasks:hover {
+  cursor: pointer;
+}
+
+.input__element {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-left: 1.5rem;
+  max-width: 33.75rem;
+  width: 100%;
+  margin-inline: auto;
+  height: 4rem;
+  border-radius: 0.3125rem;
+  background: var(--input-color);
+  box-shadow: 0px 35px 50px -15px var(--box-shadow);
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  max-width: 33.75rem;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.rounded__btn {
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 100%;
+  position: relative;
+}
+
+/* Add background color to checked todo */
+.checked {
+  background: linear-gradient(45deg, #55ddff, #c058f3);
+}
+
+.check__task::after {
+  content: "✔";
+  font-size: 1rem;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  position: absolute;
+  left: 15%;
+  opacity: 0;
+}
+
+.task__input {
+  color: var(--task-input);
+  background-color: var(--input-color);
+  font-family: "Josefin Sans";
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.01563rem;
+  outline: none;
+  border: none;
+}
+
+.container {
+  max-width: 33.75rem;
+  border-radius: 0.3125rem;
+  background: var(--container-bg);
+  box-shadow: 0px 35px 50px -15px var(--box-shadow);
+}
+
+.task__container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-left: 1.5rem;
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-top: 1.31rem;
+  padding-bottom: 1.56rem;
+}
+
+.task__container p {
+  color: var(--task-container-paragraphs-color);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.01563rem;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1.25rem;
+  background-color: var(--background-color);
+}
+
+.switch__state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.19rem;
+}
+
+.options p {
+  color: var(--task-input);
+  text-align: right;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.01213rem;
+}
+
+.switch__state p {
+  color: var(--task-input);
+  font-weight: 700;
+}
+
+.switch__state .active {
+  color: #3a7cfd;
+}
+
+.task__list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clear__btn {
+  padding-right: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .heading__elements {
+    max-width: 20.3125rem;
+    width: 100%;
+    gap: 10rem;
+  }
+
+  .heading__elements h1 {
+    font-size: 1.5rem;
+  }
+
+  .input__element {
+    max-width: 20.4375rem;
+    width: 100%;
+    height: 3rem;
+    gap: 0.75rem;
+  }
+
+  .task__input {
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.01044rem;
+  }
+
+  .task__container,
+  .container {
+    max-width: 20.4375rem;
+    width: 100%;
+  }
+
+  .task__container {
+    gap: 0.75rem;
+    padding-top: 1.19rem;
+    padding-bottom: 1.31rem;
+  }
+
+  .clear__btn {
+    max-width: 2.3rem;
+    width: 100%;
+  }
+
+  .task__container p {
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.01044rem;
+  }
+
+  .check__task::after {
+    font-size: 0.8rem;
+    left: 20%;
+    top: 7%;
+  }
+
+  .options {
+    position: relative;
+    padding-inline: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .options p {
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.01044rem;
+  }
+
+  .switch__state {
+    max-width: 20.4375rem;
+    width: 100%;
+    height: 3rem;
+    flex-shrink: 0;
+    position: absolute;
+    top: 150%;
+    left: 0.5%;
+    border-radius: 0.3125rem;
+    background: var(--state-switch);
+    box-shadow: 0px 35px 50px -15px var(--box-shadow);
+    padding-top: 0.94rem;
+    padding-bottom: 1.19rem;
+    padding-inline: 5rem;
+  }
+
+  .switch__state p {
+    font-size: 0.875rem;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  body {
+    background-size: 200rem 18.75rem;
+  }
+}

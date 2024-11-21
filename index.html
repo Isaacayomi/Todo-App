@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Todo App</title>
+    <link
+      rel="shortcut icon"
+      href="./images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section>
+      <div class="heading__elements">
+        <h1>TODO</h1>
+        <img
+          src="./images/darkmode-toggle.png"
+          alt="darkmode-toggle"
+          class="mode__btn"
+        />
+      </div>
+      <div class="input__element">
+        <div class="rounded__btn"></div>
+        <input
+          type="text"
+          name="task-input"
+          class="task__input"
+          placeholder="Create a new todo..."
+        />
+      </div>
+
+      <div class="container">
+        <div class="display__tasks__container">
+          <!-- <div class="task__container">
+            <div class="check__task rounded__btn"></div>
+            <div class="task__list">
+              <p class="task">Complete online JavaScript course</p>
+              <img
+                src="./images/clear-btn.png"
+                alt="clear-task"
+                class="clear__btn"
+              />
+            </div>
+          </div>
+
+          </div> -->
+        </div>
+        <div class="options">
+          <p class="no__items__left">
+            <span class="items__left">5</span> items left
+          </p>
+          <div class="switch__state">
+            <p class="all__task todos__state active">All</p>
+            <p class="active__task todos__state">Active</p>
+            <p class="completed__task todos__state">Completed</p>
+          </div>
+          <p class="clear__completed__tasks">Clear Completed</p>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
