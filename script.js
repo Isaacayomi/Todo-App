@@ -57,6 +57,14 @@ const addTodo = (event) => {
       tasksContainer.insertAdjacentHTML("beforeend", html);
     todosArr.push(inputTodo.value);
     console.log(todosArr);
+
+    const activeState = document.querySelector(".todos__state.active");
+
+    if (activeState && activeState.textContent.trim() === "Completed") {
+      const newTask = tasksContainer.lastElementChild;
+      newTask.style.display = "none";
+    }
+
     updateItemsLeft();
     inputTodo.value = " ";
   }
