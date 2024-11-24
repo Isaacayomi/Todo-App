@@ -7,8 +7,9 @@ const tasks = document.querySelectorAll(".task");
 let checkTaskButton = document.querySelectorAll(".check__task");
 const itemsLeft = document.querySelector(".items__left");
 let toggleImg = document.querySelector(".mode__btn");
+const clear = document.querySelector(".clear__completed__tasks");
 
-const todosArr = [];
+let todosArr = [];
 
 const updateItemsLeft = () => {
   // Count the unchecked todos
@@ -91,21 +92,53 @@ const handleCheckTodo = () => {
     }
   });
 };
+handleCheckTodo();
 
 const handleSwitchState = () => {
   const todoStates = document.querySelectorAll(".todos__state");
+  console.log(todosArr);
   todoStates.forEach(function (todostate, i) {
     todostate.addEventListener("click", function () {
       todoStates.forEach((state) => state.classList.remove("active"));
       todostate.classList.add("active");
-      if (i === 1) {
-        
-      }
+
+      const parentContainer = document.querySelectorAll(".task__container");
+
+      parentContainer.forEach(function (todos) {
+        const isChecked = todos
+          .querySelector(".check__task")
+          .classList.contains("checked");
+
+        if (i === 0) {
+          todos.style.display = "flex";
+          inputTodo.disabled = false;
+        } else if (i === 1) {
+          inputTodo.disabled = true;
+          todos.style.display = isChecked ? "none" : "flex";
+        } else {
+          inputTodo.disabled = true;
+          todos.style.display = isChecked ? "flex" : "none";
+        }
+      });
     });
   });
 };
 handleSwitchState();
 
+const clearCompleted = () => {
+  inputTodo.disabled = true;
+  const completedTasks = document.querySelectorAll(
+    ".task__container .check__task.checked"
+  );
+  completedTasks.forEach(function (tasks) {
+    const parentEl = tasks.closest(".task__container");
+    if (parentEl) {
+      const taskText = parentEl.querySelector(".task").textContent.trim();
+      parentEl.remove();
+    }
+  });
+};
+
 modeBtn.addEventListener("click", toggleMode);
 inputTodo.addEventListener("keydown", addTodo);
-handleCheckTodo();
+clear.addEventListener("click", clearCompleted);
