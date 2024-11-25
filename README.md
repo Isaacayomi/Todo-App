@@ -12,5 +12,5 @@ This project is a ToDo App that enables users to keep track of tasks to be compl
 
 ## Links
 
-- Solution URL: [https://github.com/Isaacayomi/e-commerce-product-page](https://github.com/Isaacayomi/e-commerce-product-page)
-- Live Site URL: [https://isaacayomi.github.io/e-commerce-product-page/](https://isaacayomi.github.io/e-commerce-product-page/)
+- Solution URL: [https://github.com/Isaacayomi/Todo-App](https://github.com/Isaacayomi/Todo-App)
+- Live Site URL: [https://prime-todo-app.vercel.app/](https://prime-todo-app.vercel.app/)
