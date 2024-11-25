@@ -120,7 +120,7 @@ img.mode__btn:hover,
   color: white;
   position: absolute;
   left: 15%;
-  opacity: 0;
+  opacity: 100;
 }
 
 .task__input {
