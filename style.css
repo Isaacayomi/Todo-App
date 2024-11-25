@@ -8,6 +8,7 @@
   --task-container-paragraphs-color: #494c6b;
   --state-switch: white;
   --background-image: url("./images/lightmode-bg.jpg");
+  --checkmark-color : white;
 }
 
 /* Dark mode */
@@ -21,6 +22,7 @@
   --task-container-paragraphs-color: #c8cbe7;
   --state-switch: #25273d;
   --background-image: url("./images/darkmode-bg.jpg");
+  --checkmark-color : #171823;
   /* --task-color: #C8CBE7; */
 }
 
@@ -117,7 +119,7 @@ img.mode__btn:hover,
   font-size: 1rem;
   font-weight: bolder;
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  color: var(--checkmark-color);
   position: absolute;
   left: 15%;
   opacity: 100;

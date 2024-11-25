@@ -8,7 +8,7 @@ This project is a ToDo App that enables users to keep track of tasks to be compl
 
 - **HTML**: Structure of the page.
 - **CSS**: Styling and layout, including animations and transitions.
-- **JavaScript**: Functionality.
+- **JavaScript**: Functionality including light/darkmode toggling.
 
 ## Links
 
